@@ -269,11 +269,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab7d324e9d13df743ae29430322bfe7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSprite: {fileID: 21300000, guid: fc4e11733da251d45828413637cd189c, type: 3}
+  firstSprite: {fileID: 21300000, guid: c51fbb56ad19f9b4da91031a6b109970, type: 3}
+  lastSprite: {fileID: 21300000, guid: fc4e11733da251d45828413637cd189c, type: 3}
   maxLevel: 4
   x: 0
   y: 0
   speed: 0
+  mousePos: {x: 0, y: 0, z: 0}
+  prevPos: {x: 0, y: 0, z: 0}
+  mouseDragToSellBtn: 0
 --- !u!114 &7869787208172569628
 MonoBehaviour:
   m_ObjectHideFlags: 0

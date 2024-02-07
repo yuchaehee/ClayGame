@@ -27,9 +27,6 @@ public abstract class Clay : MonoBehaviour
 
     public virtual float TouchClay()
     {
-        if (level == 5) // 최종레벨에 도달했을 때 클릭하면 애정을 반환하지 않도록 하기 위해 조건문 달았습니다..
-            return 0;
-
         return love * GameManager.instance.clayToyLevel;
     }
 

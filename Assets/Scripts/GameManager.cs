@@ -79,6 +79,7 @@ public class GameManager : MonoBehaviour
 
     public SoundManager sound;
     public PoolManager pool;
+    public ClayAction clayAction;
     public Clay clay; // 다형성 이용하려고 Clay 변수로 쓸 예정입니다..
 
     private void Awake()
@@ -216,6 +217,17 @@ public class GameManager : MonoBehaviour
         // 점토 구매하면 구매창 꺼짐..
         sound.PlaySound("BUY");
         buyClayPanel.SetActive(false);
+    }
+
+    public void MouseDragToSellBtn()
+    {
+        // button 게임 오브젝트의 Event Trigger 에서 쓰도록.. 함수 만들기 
+        clayAction.mouseDragToSellBtn = true;
+    }
+    public void MouseNotDragToSellBtn()
+    {
+        // button 에서 벗어나면 false 되도록..
+        clayAction.mouseDragToSellBtn = false;
     }
 
     public void ClayHouseLevelUp()
