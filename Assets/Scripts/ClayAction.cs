@@ -120,7 +120,8 @@ public class ClayAction : MonoBehaviour
         {
             // 최종 레벨은 일단 4로 해놨습니다..
             // 점토 위치랑 판매창 위치랑 같으면 점토 팔리도록,, (근데 점토가 최종 레벨에 도달했을 때만,,)
-            GameManager.instance.gold += GameManager.instance.clay.SellClay();
+            GameManager.instance.SellClay();
+
             Sell(); // 점토 팔리면 활성화 끄는 함수..
 
             // 다시 원상태로 해놓기..

@@ -47,6 +47,18 @@ public class GameManager : MonoBehaviour
     public Text houseBtnText;
     public Text toyBtnText;
 
+    [Header("Effect")]
+    public ParticleSystem unlockEffectPrefab;
+    public ParticleSystem sellEffectPrefab;
+    public ParticleSystem upgradeEffectPrefab;
+
+    public ParticleSystem unLockEffect;
+    public ParticleSystem sellEffect;
+    public ParticleSystem upgradeEffect;
+
+    public bool isFirstUnlock;
+    public bool isFirstSell;
+    public bool isFirstUpgrade;
 
     // 일단 기본 점토들만 쓸 거라 크기 5개로 해놨습니다.
     [Header("BuyClayData")]
@@ -77,6 +89,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
+    public Spawner spawner;
     public SoundManager sound;
     public PoolManager pool;
     public ClayAction clayAction;
@@ -85,6 +98,10 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+
+        isFirstUnlock = true;
+        isFirstSell = true;
+        isFirstUpgrade = true;
 
         clayPrice.text = "" + clayGoldList[0];
         clayName.text = clayNameList[0];
@@ -192,8 +209,17 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        // sound Manager 의 playSound 를 실행시킵니다..
-        sound.PlaySound("UNLOCK");
+        if (isFirstUnlock)
+        {
+            unLockEffect = Instantiate(unlockEffectPrefab, GetComponentsInChildren<Transform>()[1].transform);
+            isFirstUnlock = false;
+        }
+        else
+            unLockEffect.Play();
+
+
+            // sound Manager 의 playSound 를 실행시킵니다..
+            sound.PlaySound("UNLOCK");
         isUnlocked[currentPageIndex] = true;
     }
 
@@ -212,11 +238,25 @@ public class GameManager : MonoBehaviour
 
         // 점토 구매하면 생성해서 놓아야하니까 풀매니저의 GetGameObject 함수를 사용..
         // poolManager 의 프리펩 점토 인덱스랑 currentPageIndex 가 똑같은 점토를 가리킴.. 그래서 그냥 currentPageIndex 쓰면 됨.
-        pool.GetGameObject(currentPageIndex);
+        //pool.GetGameObject(currentPageIndex);
+        spawner.Spawn(currentPageIndex);
 
         // 점토 구매하면 구매창 꺼짐..
         sound.PlaySound("BUY");
         buyClayPanel.SetActive(false);
+    }
+
+    public void SellClay()
+    {
+        if (isFirstSell)
+        {
+            sellEffect = Instantiate(sellEffectPrefab, GetComponentsInChildren<Transform>()[2].transform);
+            isFirstSell = false;
+        }
+        else
+            sellEffect.Play();
+
+        gold += clay.SellClay();
     }
 
     public void MouseDragToSellBtn()
@@ -246,6 +286,14 @@ public class GameManager : MonoBehaviour
             clayHouseLevel++;
         }
 
+        if (isFirstUpgrade)
+        {
+            upgradeEffect = Instantiate(upgradeEffectPrefab, GetComponentsInChildren<Transform>()[3].transform);
+            isFirstUpgrade = false;
+        }
+        else
+            upgradeEffect.Play();
+
         sound.PlaySound("BUY");
     }
 
@@ -264,6 +312,14 @@ public class GameManager : MonoBehaviour
             love -= clayToyUpgradePrice[clayToyLevel];
             clayToyLevel++;   
         }
+
+        if (isFirstUpgrade)
+        {
+            upgradeEffect = Instantiate(upgradeEffectPrefab, GetComponentsInChildren<Transform>()[3].transform);
+            isFirstUpgrade = false;
+        }
+        else
+            upgradeEffect.Play();
 
         sound.PlaySound("BUY");
     }

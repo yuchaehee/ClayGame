@@ -7,6 +7,9 @@ public abstract class Clay : MonoBehaviour
 {
     // 모든 점토들이 이 Clay 클래스를 상속받을 것입니다..
 
+    public ParticleSystem LevelUpEffect;
+    public ParticleSystem SellEffect;
+
     public int rarity; // 0:쉬움 단계, 1:보통 단계, 2:어려움 단계
     public int level;
     public int[] exps; // 생각해봤는데 어려움 단계에서 얻은 점토일수록 레벨업 하려면 더 많이 누르게 하는게 좋을 것 같습니다.
@@ -50,6 +53,7 @@ public abstract class Clay : MonoBehaviour
 
         GameManager.instance.ChangeAc(GetComponent<Animator>(), level);
 
+        LevelUpEffect.Play();
         // Sound
         GameManager.instance.sound.PlaySound("GROW");
     }
