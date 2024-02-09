@@ -91,7 +91,7 @@ public class ClayAction : MonoBehaviour
         GameManager.instance.love += GameManager.instance.clay.TouchClay();
         GameManager.instance.clay.touchCount++;
 
-        GameManager.instance.sound.PlaySound("SELL");
+        GameManager.instance.sound.PlaySound("TOUCH");
         anim.SetTrigger("doTouch");
     }
 

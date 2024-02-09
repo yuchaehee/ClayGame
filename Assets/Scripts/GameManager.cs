@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -256,6 +257,7 @@ public class GameManager : MonoBehaviour
         else
             sellEffect.Play();
 
+        sound.PlaySound("SELL");
         gold += clay.SellClay();
     }
 
