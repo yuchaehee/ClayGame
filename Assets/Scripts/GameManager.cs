@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
     public bool[] isUnlocked; // 맨 처음 기본 점토 말고는 다 false로 해놓을 것..
 
     [Header("ClayBookData")]
-    // 야생에서 점토 잡아오면 해당 점토의 isLocked 값이 false 가 됨.
+    // 야생에서 점토 잡아오면 clayBook 의 register 함수를 통해서 해당 점토의 isLocked 값이 false 가 됨.
     public bool[] isLocked; // 사전에 등록되었는지 여부 확인용(사전에 등록되면 이제 BuyClayData 의 isUnlocked 값이 true 가 되어서 해금버튼이 활성화 됨.)
 
 

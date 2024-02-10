@@ -51,6 +51,7 @@ public class ClayAction : MonoBehaviour
     private void OnEnable()
     {
         GameManager.instance.clayAction = this.GetComponent<ClayAction>();
+        
         // 다시 활성화 되었을 때도 gameManager 가 clay 를 참조하도록..
         GameManager.instance.clay = this.GetComponent<Clay>();
         // 다시 활성화 되었을 때 level, touchCount 등의 값을 초기화하기 위함..
