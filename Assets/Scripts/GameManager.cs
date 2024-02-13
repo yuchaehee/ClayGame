@@ -52,14 +52,17 @@ public class GameManager : MonoBehaviour
     public ParticleSystem unlockEffectPrefab;
     public ParticleSystem sellEffectPrefab;
     public ParticleSystem upgradeEffectPrefab;
+    public ParticleSystem clayLevelUpPrefab;
 
     public ParticleSystem unLockEffect;
     public ParticleSystem sellEffect;
     public ParticleSystem upgradeEffect;
+    public ParticleSystem clayLevelUpEffect;
 
     public bool isFirstUnlock;
     public bool isFirstSell;
     public bool isFirstUpgrade;
+    public bool isFirstClayLevelUp;
 
     // 일단 기본 점토들만 쓸 거라 크기 5개로 해놨습니다.
     [Header("BuyClayData")]
@@ -103,6 +106,7 @@ public class GameManager : MonoBehaviour
         isFirstUnlock = true;
         isFirstSell = true;
         isFirstUpgrade = true;
+        isFirstClayLevelUp = true;
 
         clayPrice.text = "" + clayGoldList[0];
         clayName.text = clayNameList[0];
@@ -120,6 +124,19 @@ public class GameManager : MonoBehaviour
         if (clay.touchCount == clay.exps[clay.level])
         {
             clay.LevelUp();
+
+            if (isFirstClayLevelUp)
+            {
+                // 레벨업 이벤트가 처음 실행되면 이펙트 게임 오브젝트 생성..
+                isFirstClayLevelUp = false;
+                clayLevelUpEffect = Instantiate(clayLevelUpPrefab, GetComponentsInChildren<Transform>()[4].transform);
+                clayLevelUpEffect.transform.position = clay.transform.position; 
+            } else
+            {
+                // 처음 실행되는 거 아니면 걍 원래 있는 게임 오브젝트의 위치만 바꿔서 재사용하기..
+                clayLevelUpEffect.transform.position = clay.transform.position;
+                clayLevelUpEffect.Play();
+            }
         }
 
         // 일단 Esc 버튼 누르면 뜨도록 해놨습니다..

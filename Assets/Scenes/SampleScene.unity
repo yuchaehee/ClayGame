@@ -2697,7 +2697,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 3.03125
+  orthographic size: 3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3112,12 +3112,15 @@ MonoBehaviour:
   unlockEffectPrefab: {fileID: 1449242181322416604, guid: 052d5f6cf7d3ebc44bba49fbe653f9a8, type: 3}
   sellEffectPrefab: {fileID: 9169966119468206341, guid: ed962e35f7fa6f34f8d27aa6d19ea293, type: 3}
   upgradeEffectPrefab: {fileID: 4035903591278710482, guid: aa122f157eac1c8428ae5db8a315ccd8, type: 3}
+  clayLevelUpPrefab: {fileID: 4938095755617958530, guid: 2e79f16be10fbd14f8d5ef191f8db4aa, type: 3}
   unLockEffect: {fileID: 0}
   sellEffect: {fileID: 0}
   upgradeEffect: {fileID: 0}
+  clayLevelUpEffect: {fileID: 0}
   isFirstUnlock: 0
   isFirstSell: 0
   isFirstUpgrade: 0
+  isFirstClayLevelUp: 0
   claySpriteList:
   - {fileID: 21300000, guid: 41ffbb58d69f2964bb8d38a606de0890, type: 3}
   - {fileID: 21300000, guid: 4f2b479a4cf84a04f9529f065b7aeb8f, type: 3}
@@ -3166,6 +3169,7 @@ Transform:
   - {fileID: 1341878521}
   - {fileID: 1952816538}
   - {fileID: 495870581}
+  - {fileID: 1035203354}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &655260445
@@ -4587,7 +4591,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1035203354}
   m_Layer: 0
-  m_Name: EffectGroup
+  m_Name: LevelUpEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4602,11 +4606,11 @@ Transform:
   m_GameObject: {fileID: 1035203353}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.54076695, y: 0.28996962, z: -4.7343187}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 624784493}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1038081800
 GameObject:
@@ -7962,8 +7966,7 @@ SceneRoots:
   - {fileID: 620543261}
   - {fileID: 624784493}
   - {fileID: 554781212}
-  - {fileID: 271821939}
   - {fileID: 193526126}
+  - {fileID: 271821939}
   - {fileID: 2083304713}
   - {fileID: 1829285262}
-  - {fileID: 1035203354}

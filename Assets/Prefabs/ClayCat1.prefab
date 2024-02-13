@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8143634238812116888}
   m_Layer: 6
   m_Name: ClayCat1
-  m_TagString: Untagged
+  m_TagString: cat1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

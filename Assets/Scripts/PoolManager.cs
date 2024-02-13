@@ -42,10 +42,6 @@ public class PoolManager : MonoBehaviour
             // 새로 생성한 게임 오브젝트는 풀 매니저 하위에 놓을 것.. 그래서 부모에 transform 넣음..
             select = Instantiate(prefabs[index], transform);
             pools[index].Add(select);
-
-            // effects[0] : 레벨업, effects[1] : 판매, ... 
-            select.GetComponent<Clay>().LevelUpEffect = Instantiate(effects[0], select.transform);
-            select.GetComponent<Clay>().SellEffect = Instantiate(effects[1], select.transform);
         }
 
         return select;

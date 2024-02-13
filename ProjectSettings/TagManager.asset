@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - cat1
+  - chick1
+  - dog1
+  - rabbit1
+  - squirrel1
   layers:
   - Default
   - TransparentFX
