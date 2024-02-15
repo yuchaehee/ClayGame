@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c38dd680a8095043aa813bd2c9659de
-      internalID: 1342941107
+      spriteID: c0eaab10d7771424da69f0113d09b2a9
+      internalID: 1653446803
       vertices: []
       indices: 
       edges: []
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b8c886cff010c440b0d8a6608540c37
-      internalID: -1705068776
+      spriteID: e4aa640e72214754e92bebb92dc08bf6
+      internalID: 2116836853
       vertices: []
       indices: 
       edges: []
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f126a51b0e6c54c40807364d5ecfd079
-      internalID: 818824718
+      spriteID: bcce983036c95fc499ae62630374714b
+      internalID: 893681745
       vertices: []
       indices: 
       edges: []
@@ -187,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2ef1e1808de923479e05f6643416221
-      internalID: -567026972
+      spriteID: 3daf7b881131159499bf6d1c612d8b01
+      internalID: 1868112285
       vertices: []
       indices: 
       edges: []
@@ -208,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23269ecdbdb2910439c3c38fca3bc5d0
-      internalID: -148888294
+      spriteID: be185bd8214dc994191f069ebeb6c1f1
+      internalID: 1362675011
       vertices: []
       indices: 
       edges: []
@@ -225,11 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player1_Dead-Sheet_0: 1342941107
-      Player1_Dead-Sheet_1: -1705068776
-      Player1_Dead-Sheet_2: 818824718
-      Player1_Dead-Sheet_3: -567026972
-      Player1_Dead-Sheet_4: -148888294
+      Player1_Dead-Sheet_0: 1653446803
+      Player1_Dead-Sheet_1: 2116836853
+      Player1_Dead-Sheet_2: 893681745
+      Player1_Dead-Sheet_3: 1868112285
+      Player1_Dead-Sheet_4: 1362675011
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

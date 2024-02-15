@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c54e4199888e1d0499b73bef77083855
-      internalID: -833810146
+      spriteID: f5f56f8ac19c8694b9a63114e8641f9b
+      internalID: -1033947466
       vertices: []
       indices: 
       edges: []
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 295de9604209e344a9a90a95184d8c60
-      internalID: 759717117
+      spriteID: ee445ca33c911664a9e5b5cfd2224bea
+      internalID: 1446625506
       vertices: []
       indices: 
       edges: []
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31e7d708fe4f9374fb3f4952aef2c0ed
-      internalID: 1955095601
+      spriteID: b7dbf1d381e2e2b40b1b8b0248318eb3
+      internalID: -867827253
       vertices: []
       indices: 
       edges: []
@@ -187,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f34f2ab5e6fe9ef41ba0bc6b88b83be7
-      internalID: 1964203488
+      spriteID: b4a567d2fcade5f43af698744ec7114b
+      internalID: -699214941
       vertices: []
       indices: 
       edges: []
@@ -208,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a75aaa7e70add714ea5480599c62f1a3
-      internalID: 74398554
+      spriteID: 1ddee3212c28a3349a6bce34e7dd02e5
+      internalID: -1704672692
       vertices: []
       indices: 
       edges: []
@@ -229,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58a3d8766ef6c0f499ee706464a7d6a7
-      internalID: 1483824316
+      spriteID: 8713049770b53b54cb9f4f62c6919dc3
+      internalID: 289765647
       vertices: []
       indices: 
       edges: []
@@ -246,12 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player0_Jump-Sheet_0: -833810146
-      Player0_Jump-Sheet_1: 759717117
-      Player0_Jump-Sheet_2: 1955095601
-      Player0_Jump-Sheet_3: 1964203488
-      Player0_Jump-Sheet_4: 74398554
-      Player0_Jump-Sheet_5: 1483824316
+      Player0_Jump-Sheet_0: -1033947466
+      Player0_Jump-Sheet_1: 1446625506
+      Player0_Jump-Sheet_2: -867827253
+      Player0_Jump-Sheet_3: -699214941
+      Player0_Jump-Sheet_4: -1704672692
+      Player0_Jump-Sheet_5: 289765647
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
