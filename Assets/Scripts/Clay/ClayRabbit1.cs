@@ -12,6 +12,7 @@ public class ClayRabbit1 : Clay
         sellPrice = 2000;
         love = 10;
         clayName = "토끼";
+        clayInformation = "저는 토끼임요.";
     }
 
     public override void SetClayData()

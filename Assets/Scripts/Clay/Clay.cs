@@ -18,6 +18,9 @@ public abstract class Clay : MonoBehaviour
     public float love; // 얘는 터치하면 반환하는 애정..
     public string clayName;
 
+    // ClayBook 클래스에서 쓸 변수..
+    public string clayInformation;
+
 
     public virtual void SetClayData()
     {
