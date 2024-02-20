@@ -112,4 +112,9 @@ public class ClayBook : MonoBehaviour
 
         curPageIndex--;
     }
+
+    public void UIIndexReset()
+    {
+        curPageIndex = 0;
+    }
 }

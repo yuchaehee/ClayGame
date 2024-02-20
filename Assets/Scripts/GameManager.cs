@@ -139,33 +139,6 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        // 일단 Esc 버튼 누르면 뜨도록 해놨습니다..
-        if (Input.GetButtonDown("Cancel"))
-        {
-            if (optionPanel.activeSelf == true)
-                optionPanel.SetActive(false);
-            else
-                optionPanel.SetActive(true);
-        }
-
-        // 일단 스페이스바 누르면 구매창 뜨도록 해놨습니다.. 원하시는대로 변경 가능합니다..
-        if (Input.GetButtonDown("Jump"))
-        {
-            if (buyClayPanel.activeSelf == true)
-                buyClayPanel.SetActive(false);
-            else
-                buyClayPanel.SetActive(true);
-        }
-
-        // 일단 vertical 버튼 누르면 구매창 뜨도록 해놨습니다.. 원하시는대로 변경 가능합니다..
-        if (Input.GetButtonDown("Vertical"))
-        {
-            if (plantPanel.activeSelf == true)
-                plantPanel.SetActive(false);
-            else
-                plantPanel.SetActive(true);
-        }
-
         UIUpdate();
     }
 
@@ -183,6 +156,11 @@ public class GameManager : MonoBehaviour
             return;
 
         currentPageIndex++;
+    }
+
+    public void UIIndexReset()
+    {
+        currentPageIndex = 0;
     }
 
     public void UIUpdate()
