@@ -139,6 +139,18 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        if (Input.GetButtonDown("Cancel"))
+        {
+            // 이미 창이 켜진 상태면 끄기..
+            if (optionPanel.activeSelf)
+            {
+                optionPanel.SetActive(false);
+                return;
+            }
+
+            optionPanel.SetActive(true);
+        }
+
         UIUpdate();
     }
 
