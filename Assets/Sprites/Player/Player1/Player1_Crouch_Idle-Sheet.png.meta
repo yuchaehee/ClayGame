@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ad01ff4500cbc074aa5288788c03753c
+guid: da63bc6ac748db0488c7f92b2e886a53
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player1_Jump-Sheet_0
+      name: Player1_Crouch_Idle-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e19a9c01cb427b845aaff64d3caa22f5
-      internalID: -2113259992
+      spriteID: bfed9733538eb924f86dc58f7034f5ad
+      internalID: 1057675054
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_Jump-Sheet_1
+      name: Player1_Crouch_Idle-Sheet_1
       rect:
         serializedVersion: 2
         x: 65
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63fbc44358a640e488af11cb64d5194d
-      internalID: -2003724979
+      spriteID: 4c0ecc359cce5434aaebaa19739222cc
+      internalID: -1356380384
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_Jump-Sheet_2
+      name: Player1_Crouch_Idle-Sheet_2
       rect:
         serializedVersion: 2
         x: 130
@@ -166,71 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c78049509e5412747a2d82547e503ad0
-      internalID: 436173673
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player1_Jump-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 195
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b5da0ae0f6d70cd4eb9daed3631d3584
-      internalID: 2130249600
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player1_Jump-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 260
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 964303157460fca48bcbe51b1617e65e
-      internalID: 1694776011
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player1_Jump-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 325
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d6efdfa32a4d81443bf6847abb2615ea
-      internalID: -807309737
+      spriteID: f77cedb0870d9424196b04e8b6568666
+      internalID: 1109659629
       vertices: []
       indices: 
       edges: []
@@ -246,12 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player1_Jump-Sheet_0: -2113259992
-      Player1_Jump-Sheet_1: -2003724979
-      Player1_Jump-Sheet_2: 436173673
-      Player1_Jump-Sheet_3: 2130249600
-      Player1_Jump-Sheet_4: 1694776011
-      Player1_Jump-Sheet_5: -807309737
+      Player1_Crouch_Idle-Sheet_0: 1057675054
+      Player1_Crouch_Idle-Sheet_1: -1356380384
+      Player1_Crouch_Idle-Sheet_2: 1109659629
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
