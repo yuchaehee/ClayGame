@@ -28,6 +28,10 @@ public class ClayBook : MonoBehaviour
     [Header("ClayInformation")]
     public string[] clayInformationList;
 
+    [Header("BookUIAnimation")]
+    // Canvas 의 Book Panel 에 있는 animator 요소 가져오기..
+    public GameObject bookPageControl;
+
     // 일단 기본 다섯마리만 해놨습니다..
     public bool[] isRegistered;
 
@@ -95,12 +99,26 @@ public class ClayBook : MonoBehaviour
         ClayInformation.text = clayInformationList[curPageIndex];
     }
 
+    public void bookOpen()
+    {
+        // 책 버튼 누르면 밑에서 올라오는 애니메이션 실행되도록..
+        ClayBookPanel.GetComponent<Animator>().SetBool("isShow", true);
+    }
+
+    public void bookClose()
+    {
+        // 나가기 버튼 누르면 아래에서 밑으로 가는 애니메이션 실행되도록..
+        ClayBookPanel.GetComponent<Animator>().SetBool("isShow", false);
+    }
+
     public void pageIndexUp()
     {
         // 현재 페이지 인덱스가 최대 페이지 인덱스보다 크거나 같으면 다음 장으로 안 넘어가도록..
         if (curPageIndex >= maxPageIndex)
             return;
 
+        // 오른쪽으로 넘기는 애니메이션 실행..
+        bookPageControl.GetComponent<Animator>().SetTrigger("isRight");
         curPageIndex++;
     }
 
@@ -110,6 +128,8 @@ public class ClayBook : MonoBehaviour
         if (curPageIndex <= minPageIndex)
             return;
 
+        // 왼쪽으로 넘기는 애니메이션 실행..
+        bookPageControl.GetComponent<Animator>().SetTrigger("isLeft");
         curPageIndex--;
     }
 

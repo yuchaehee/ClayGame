@@ -99,6 +99,8 @@ public class GameManager : MonoBehaviour
     public ClayAction clayAction;
     public Clay clay; // 다형성 이용하려고 Clay 변수로 쓸 예정입니다..
 
+    
+
     private void Awake()
     {
         instance = this;
@@ -112,14 +114,15 @@ public class GameManager : MonoBehaviour
         clayName.text = clayNameList[0];
         unlockClayImage.sprite = claySpriteList[0];
 
+        // 초기화 해놓기..
+        loveText.text = love + "";
+        goldText.text = gold + "";
+
         unlockPanel.SetActive(true);
     }
 
     private void Update()
     {
-        goldText.text = "" + gold;
-        loveText.text = "" + love;
-
         // 터치 카운트 다 채우면 레벨업..
         if (clay.touchCount == clay.exps[clay.level])
         {
@@ -152,6 +155,13 @@ public class GameManager : MonoBehaviour
         }
 
         UIUpdate();
+    }
+
+    private void LateUpdate()
+    {
+        // 수치 변환 애니메이션
+        loveText.text = string.Format("{0:n0}", Mathf.SmoothStep(float.Parse(loveText.text), love, 0.5f));
+        goldText.text = string.Format("{0:n0}", Mathf.SmoothStep(float.Parse(goldText.text), gold, 0.5f));
     }
 
     public void PageLeftBtn()

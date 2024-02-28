@@ -26,6 +26,7 @@ public class ClayAction : MonoBehaviour
     float touchTime;
     public bool mouseDragToSellBtn;
 
+
     private void Awake()
     {
         spriter = GetComponent<SpriteRenderer>();
@@ -51,7 +52,7 @@ public class ClayAction : MonoBehaviour
     private void OnEnable()
     {
         GameManager.instance.clayAction = this.GetComponent<ClayAction>();
-        
+
         // 다시 활성화 되었을 때도 gameManager 가 clay 를 참조하도록..
         GameManager.instance.clay = this.GetComponent<Clay>();
         // 다시 활성화 되었을 때 level, touchCount 등의 값을 초기화하기 위함..
@@ -70,7 +71,7 @@ public class ClayAction : MonoBehaviour
         // 방금 클릭한 점토만 스프라이트 바꿀 거라서, 게임매니저가 가리키고 있는 점토가 나 일 때 라는 두번째 조건 추가함.
         if (GameManager.instance.clay.level == maxLevel && GameManager.instance.clay == this.GetComponent<Clay>())
             spriter.sprite = lastSprite;
-               
+
 
         if (x != 0)
         {
@@ -117,7 +118,7 @@ public class ClayAction : MonoBehaviour
         GameManager.instance.clay = this.GetComponent<Clay>();
 
         // 마우스 커서가 젤리 판매 버튼이랑 닿으면 mouseDragToSellBtn 이 true 가 됨..
-        if (mouseDragToSellBtn && GameManager.instance.clay.level==maxLevel)
+        if (mouseDragToSellBtn && GameManager.instance.clay.level == maxLevel)
         {
             // 최종 레벨은 일단 4로 해놨습니다..
             // 점토 위치랑 판매창 위치랑 같으면 점토 팔리도록,, (근데 점토가 최종 레벨에 도달했을 때만,,)
