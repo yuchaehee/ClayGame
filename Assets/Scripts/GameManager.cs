@@ -160,8 +160,8 @@ public class GameManager : MonoBehaviour
     private void LateUpdate()
     {
         // 수치 변환 애니메이션
-        loveText.text = string.Format("{0:n0}", Mathf.SmoothStep(float.Parse(loveText.text), love, 0.5f));
-        goldText.text = string.Format("{0:n0}", Mathf.SmoothStep(float.Parse(goldText.text), gold, 0.5f));
+        loveText.text = string.Format("{0:n0}", Mathf.SmoothStep(float.Parse(loveText.text), love, 0.6f));
+        goldText.text = string.Format("{0:n0}", Mathf.SmoothStep(float.Parse(goldText.text), gold, 0.6f));
     }
 
     public void PageLeftBtn()
