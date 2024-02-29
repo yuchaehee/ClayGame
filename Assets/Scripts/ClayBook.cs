@@ -118,7 +118,8 @@ public class ClayBook : MonoBehaviour
             return;
 
         // 오른쪽으로 넘기는 애니메이션 실행..
-        bookPageControl.GetComponent<Animator>().SetTrigger("isRight");
+        bookPageControl.GetComponent<Animator>().SetBool("isRight",true);
+        bookPageControl.GetComponent<Animator>().SetBool("isLeft",false);
         curPageIndex++;
     }
 
@@ -129,7 +130,9 @@ public class ClayBook : MonoBehaviour
             return;
 
         // 왼쪽으로 넘기는 애니메이션 실행..
-        bookPageControl.GetComponent<Animator>().SetTrigger("isLeft");
+        bookPageControl.GetComponent<Animator>().SetBool("isLeft", true);
+        bookPageControl.GetComponent<Animator>().SetBool("isRight", false);
+        
         curPageIndex--;
     }
 
