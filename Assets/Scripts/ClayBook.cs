@@ -138,6 +138,7 @@ public class ClayBook : MonoBehaviour
 
     public void UIIndexReset()
     {
+        // 점토 구매창을 껐다가 다시 켰을 때 맨 첫 페이지 나오도록...
         curPageIndex = 0;
     }
 }
