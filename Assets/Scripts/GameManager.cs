@@ -281,11 +281,14 @@ public class GameManager : MonoBehaviour
     public void MouseDragToSellBtn()
     {
         // button 게임 오브젝트의 Event Trigger 에서 쓰도록.. 함수 만들기 
+
+        if (clayAction == null) return; // 아무것도 참조 안 하고 있으면 밑 코드 실행 안되도록..
         clayAction.mouseDragToSellBtn = true;
     }
     public void MouseNotDragToSellBtn()
     {
         // button 에서 벗어나면 false 되도록..
+        if (clayAction == null) return; // 아무것도 참조 안 하고 있으면 밑 코드 실행 안되도록..
         clayAction.mouseDragToSellBtn = false;
     }
 
