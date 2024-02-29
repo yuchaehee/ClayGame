@@ -118,9 +118,12 @@ public class ClayBook : MonoBehaviour
             return;
 
         // 오른쪽으로 넘기는 애니메이션 실행..
+        bookPageControl.SetActive(true);
         bookPageControl.GetComponent<Animator>().SetBool("isRight",true);
         bookPageControl.GetComponent<Animator>().SetBool("isLeft",false);
+
         curPageIndex++;
+        Invoke("Wait", 0.6f);
     }
 
     public void pageIndexDown()
@@ -130,15 +133,22 @@ public class ClayBook : MonoBehaviour
             return;
 
         // 왼쪽으로 넘기는 애니메이션 실행..
+        bookPageControl.SetActive(true);
         bookPageControl.GetComponent<Animator>().SetBool("isLeft", true);
         bookPageControl.GetComponent<Animator>().SetBool("isRight", false);
         
         curPageIndex--;
+        Invoke("Wait", 0.6f);
     }
 
     public void UIIndexReset()
     {
         // 점토 구매창을 껐다가 다시 켰을 때 맨 첫 페이지 나오도록...
         curPageIndex = 0;
+    }
+
+    void Wait()
+    {
+        bookPageControl.SetActive(false);
     }
 }
