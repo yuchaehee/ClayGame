@@ -100,6 +100,7 @@ public class ClayAction : MonoBehaviour
     private void OnMouseDrag()
     {   // 점토 드래그 기능..
 
+        // 참조시키기..
         GameManager.instance.clayAction = this.GetComponent<ClayAction>();
         GameManager.instance.clay = this.GetComponent<Clay>();
 
@@ -109,17 +110,30 @@ public class ClayAction : MonoBehaviour
         if (touchTime > 0.5f)
         {
             transform.position = mousePos;
+
+            // 점토를 들어올리면 빛이랑 그림자가 켜질 것..
+            GameManager.instance.sellLight.SetActive(true);
+            GameManager.instance.sellShadow.SetActive(true);
+            // 점토를 들어올리면 셀 버튼의 애니메이션 실행..
+            GameManager.instance.sellButtonAnim.GetComponent<Animator>().SetBool("isStarted", true);
         }
     }
 
     private void OnMouseUp()
     {
+        // 점토를 내려놓으면 빛이랑 그림자가 꺼질 것..
+        GameManager.instance.sellLight.SetActive(false);
+        GameManager.instance.sellShadow.SetActive(false);
+        // 애니메이션 끄기..
+        GameManager.instance.sellButtonAnim.GetComponent<Animator>().SetBool("isStarted", false);
+
         GameManager.instance.clayAction = this.GetComponent<ClayAction>();
         GameManager.instance.clay = this.GetComponent<Clay>();
 
         // 마우스 커서가 젤리 판매 버튼이랑 닿으면 mouseDragToSellBtn 이 true 가 됨..
         if (mouseDragToSellBtn && GameManager.instance.clay == null) return; // 게임매니저가 점토를 한 번도 안 누른 상태면 그냥 빠져나오도록..
-        else if (mouseDragToSellBtn && GameManager.instance.clay.level == maxLevel)
+
+        if (mouseDragToSellBtn && GameManager.instance.clay.level == maxLevel)
         {
             // 최종 레벨은 일단 4로 해놨습니다..
             // 점토 위치랑 판매창 위치랑 같으면 점토 팔리도록,, (근데 점토가 최종 레벨에 도달했을 때만,,)
@@ -129,6 +143,10 @@ public class ClayAction : MonoBehaviour
 
             // 다시 원상태로 해놓기..
             mouseDragToSellBtn = false;
+        } else if (mouseDragToSellBtn && GameManager.instance.clay.level != maxLevel)
+        {
+            GameManager.instance.infoText.text = "성체가 된 점토만 분양할 수 있습니다.";
+            GameManager.instance.InfoTextAnimStart();
         }
 
         if (transform.position.x < -5.4 || transform.position.x > 5.4)

@@ -9,15 +9,32 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    // 원래 게임매니저에 임시로 UI 해놓았었는데 하고 싶으신대로 해주시면 감사하겠습니다..
+    [Header("2D Light & SellButtonUIAnim")]
+    // 점토를 잡아들었을 때 그림자랑 빛 효과가 켜지도록..
+    // 아래 세 변수들은 ClayAction 에서 쓸 것..
+    public GameObject sellShadow;
+    public GameObject sellLight;
+    public GameObject sellButtonAnim;
+
+
     [Header("GameData UI")]
     public Text goldText;
     public Text loveText;
 
+    // 안내문구 텍스트..
+    public Text infoText;
+    public GameObject infoTextAnim;
+
+
     [Header("Game Sound && Exit UI")]
     public GameObject optionPanel;
 
-    [Header("Clay Sell & Unlock UI")]
+    [Header("IconButtonUI")]
+    public GameObject upgradeButton;
+    public GameObject buyButton;
+    public GameObject travelButton;
+
+    [Header("Clay SellAndBuy & Unlock UI")]
     // 해금 여부 상관 없는 공통 정보..
     public Text pageText;
 
@@ -223,7 +240,10 @@ public class GameManager : MonoBehaviour
         // 사전에 등록이 안 된 상태면 해금하기 버튼 눌러도 해금 안 됨.
         if (isLocked[currentPageIndex])
         {
-            Debug.Log("흠.. " + pool.prefabs[currentPageIndex].GetComponent<Clay>().rarity + "단계 야생에서 잡아와야 할 듯 하다..");
+            GameManager.instance.infoText.text = "흠.. " + pool.prefabs[currentPageIndex].GetComponent<Clay>().rarity + "단계 야생에서 잡아와야 할 듯 하다.";
+            CloseButtonIcon("Buy");
+            InfoTextAnimStart();
+            
             return;
         }
 
@@ -236,8 +256,8 @@ public class GameManager : MonoBehaviour
             unLockEffect.Play();
 
 
-            // sound Manager 의 playSound 를 실행시킵니다..
-            sound.PlaySound("UNLOCK");
+        // sound Manager 의 playSound 를 실행시킵니다..
+        sound.PlaySound("UNLOCK");
         isUnlocked[currentPageIndex] = true;
     }
 
@@ -246,11 +266,27 @@ public class GameManager : MonoBehaviour
 
         // clayHouseLevel 만큼 점토 키울 수 있음..
         // Lv.0 : 1마리, Lv.1 : 2마리, ..., Lv.4 : 5마리
-        if (pool.GetComponentsInChildren<Clay>().Length == clayHouseLevel) // 한 번에 키울 수 있는 최대 점토의 수는 5마리
-            return;
+        if (pool.GetComponentsInChildren<Clay>().Length == clayHouseLevel)
+        {   // 한 번에 키울 수 있는 최대 점토의 수는 5마리
+            infoText.text = "집이 너무 좁아요ㅠ_ㅠ";
 
-        if (gold - clayGoldList[currentPageIndex] < 0) // 돈 없으면 그냥 함수 빠져나가도록..
+            // 창 꺼버리도록..
+            CloseButtonIcon("Buy");
+
+            InfoTextAnimStart();
             return;
+        }
+
+        if (gold - clayGoldList[currentPageIndex] < 0)
+        {   // 돈 없으면 그냥 함수 빠져나가도록..
+            infoText.text = "골드가 부족해요ㅠ_ㅠ";
+
+            // 창 꺼버리도록..
+            CloseButtonIcon("Buy");
+
+            InfoTextAnimStart();
+            return;
+        }
 
         gold -= clayGoldList[currentPageIndex];
 
@@ -295,7 +331,15 @@ public class GameManager : MonoBehaviour
     public void ClayHouseLevelUp()
     {
         if (love - clayHouseUpgradePrice[clayHouseLevel] < 0)
+        {
+            infoText.text = "애정이 부족해요ㅠ_ㅠ";
+
+            // 창 꺼버리도록..
+            CloseButtonIcon("Upgrade");
+
+            InfoTextAnimStart();
             return;
+        }
 
         if (clayHouseLevel + 1 == clayHouseUpgradePrice.Length)
         {
@@ -322,7 +366,15 @@ public class GameManager : MonoBehaviour
     public void ClayToyLevelUp()
     {
         if (love - clayToyUpgradePrice[clayToyLevel] < 0)
+        {
+            infoText.text = "애정이 부족해요ㅠ_ㅠ";
+
+            // 창 꺼버리도록..
+            CloseButtonIcon("Upgrade");
+
+            InfoTextAnimStart();
             return;
+        }
 
         if (clayToyLevel + 1 == clayToyUpgradePrice.Length)
         {
@@ -354,5 +406,53 @@ public class GameManager : MonoBehaviour
     public void GameEixt()
     {
         Application.Quit();
+    }
+
+    public void InfoTextAnimStart()
+    {
+        if (infoTextAnim.activeSelf)
+        {
+            // 이미 창 켜진 상탠데 또 켜려고 하면 처음부터 다시 시작하도록..
+            InfoTextAnimClose();
+            InfoTextAnimStart(); // 재귀
+            return;
+        }
+
+        infoTextAnim.SetActive(true);
+        infoTextAnim.GetComponent<Animator>().SetTrigger("isStarted");
+
+        Invoke("InfoTextAnimClose", 3f);
+    }
+
+    void InfoTextAnimClose()
+    {
+        infoTextAnim.SetActive(false);
+        infoTextAnim.GetComponent<Animator>().SetTrigger("isClosed");
+    }
+
+    void CloseButtonIcon(string icon)
+    {
+        switch (icon)
+        {
+            case "Buy":
+                // 점토 구매 관련
+                buyClayPanel.SetActive(false);
+                buyButton.GetComponent<ButtonChanger>().ResetButtonSprite();
+                buyButton.GetComponent<ButtonChanger>().SetBoolButton();
+                return;
+            case "Upgrade":
+                plantPanel.SetActive(false);
+                upgradeButton.GetComponent<ButtonChanger>().ResetButtonSprite();
+                upgradeButton.GetComponent<ButtonChanger>().SetBoolButton();
+                return;
+            case "Travel":
+                // 야생 기능 생기면 채워 넣기..
+                return;
+        }
+        
+
+        // 용품 업그레이드 관련
+
+        // 여행 관련
     }
 }
