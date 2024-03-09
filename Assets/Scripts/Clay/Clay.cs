@@ -52,7 +52,10 @@ public abstract class Clay : MonoBehaviour
 
         love += levelUpPlusLove * level;
 
-        GameManager.instance.ChangeAc(GetComponent<Animator>(), level);
+        
+        GameManager.instance.ChangeAc(level);
+        // 레벨업 할 때마다 바뀐 애니메이션을 적용시키도록...
+        GameManager.instance.clayAction.curAnim.runtimeAnimatorController = GameManager.instance.clayAction.animList[0];
 
         // 이펙트 실행
         //LevelUpEffect.Play();

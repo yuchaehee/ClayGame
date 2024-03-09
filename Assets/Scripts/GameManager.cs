@@ -9,12 +9,18 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("UICanvase")]
+    // 이거 clayAction 에서 쓸 것.. 점토 들어올리면 UI 캔버스 꺼버리도록..
+    public GameObject UICanvas;
+
     [Header("2D Light & SellButtonUIAnim")]
     // 점토를 잡아들었을 때 그림자랑 빛 효과가 켜지도록..
-    // 아래 세 변수들은 ClayAction 에서 쓸 것..
+    // 아래 네 변수들은 ClayAction 에서 쓸 것..
     public GameObject sellShadow;
     public GameObject sellLight;
     public GameObject sellButtonAnim;
+    public GameObject windowLight;
+    public GameObject shinLight;
 
 
     [Header("GameData UI")]
@@ -24,6 +30,18 @@ public class GameManager : MonoBehaviour
     // 안내문구 텍스트..
     public Text infoText;
     public GameObject infoTextAnim;
+
+
+    [Header("IteM UI")]
+    // 점토 하우스 레벨업 할 때마다 아이템 추가되도록..
+    public GameObject level2Item;
+    public GameObject level3Item;
+    public GameObject level4Item;
+    public GameObject level5Item;
+    public string curTargetItem;
+
+    // level 4 되면 켜지도록..
+    public GameObject windoLight;
 
 
     [Header("Game Sound && Exit UI")]
@@ -101,7 +119,12 @@ public class GameManager : MonoBehaviour
 
 
     [Header("GameData")]
-    public RuntimeAnimatorController[] levelAc;
+    // 노멀은 일반 애니메이터, 아이템은 아이템과 점토가 상호작용 할 때 쓰는 애니메이터..
+    public RuntimeAnimatorController[] normalLevelAc;
+    public RuntimeAnimatorController[] itemLevel2Ac;
+    public RuntimeAnimatorController[] itemLevel3Ac;
+    public RuntimeAnimatorController[] itemLevel4Ac;
+    public RuntimeAnimatorController[] itemLevel5Ac;
 
     public int clayHouseLevel;
     public int clayToyLevel;
@@ -113,6 +136,7 @@ public class GameManager : MonoBehaviour
     public Spawner spawner;
     public SoundManager sound;
     public PoolManager pool;
+    public ItemClicked item;
     public ClayAction clayAction;
     public Clay clay; // 다형성 이용하려고 Clay 변수로 쓸 예정입니다..
 
@@ -233,6 +257,31 @@ public class GameManager : MonoBehaviour
             toyBtnText.text = "끝";
         else
             toyBtnText.text = "" + clayToyUpgradePrice[clayToyLevel];
+
+
+        // ItemUI
+        if (clayHouseLevel > 5) return;
+        else
+        {
+            switch (clayHouseLevel)
+            {
+                case 2:
+                    level2Item.SetActive(true);
+                    break;
+                case 3:
+                    level3Item.SetActive(true);
+                    break;
+                case 4:
+                    level4Item.SetActive(true);
+                    windoLight.SetActive(true);
+                    shinLight.SetActive(false);
+
+                    break;
+                case 5:
+                    level5Item.SetActive(true);
+                    break;
+            }
+        }
     }
 
     public void Unlock()
@@ -398,9 +447,13 @@ public class GameManager : MonoBehaviour
         sound.PlaySound("BUY");
     }
 
-    public void ChangeAc(Animator anim, int level)
+    public void ChangeAc(int level)
     {
-        anim.runtimeAnimatorController = levelAc[level];
+        GameManager.instance.clayAction.animList[0] = normalLevelAc[level];
+        GameManager.instance.clayAction.animList[1] = itemLevel3Ac[level];
+        GameManager.instance.clayAction.animList[2] = itemLevel2Ac[level];
+        GameManager.instance.clayAction.animList[3] = itemLevel4Ac[level];
+        GameManager.instance.clayAction.animList[4] = itemLevel5Ac[level];
     }
 
     public void GameEixt()
