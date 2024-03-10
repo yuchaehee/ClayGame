@@ -5058,7 +5058,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &682837225
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11463,7 +11463,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1771361725
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11495,8 +11495,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91b49bad0cc96ef4aaba9ac5f84f5ee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickedSprite: {fileID: 21300000, guid: 229d5553bdffbaf48bb173c40303afd2, type: 3}
-  nonClickedSprite: {fileID: 21300000, guid: a6e4c8e0e426fd84092288ac4610ed0f, type: 3}
+  clickedSprite: {fileID: 21300000, guid: 32c3385dacf608e49ba0eac715e07a4e, type: 3}
+  nonClickedSprite: {fileID: 21300000, guid: a637c1091b555ac4483556b816f2287f, type: 3}
   clickedText: "\uC810\uD1A0\uB4E4\uC758 \uBCF4\uC740 \uC870\uBA85"
   button: {fileID: 1771361727}
   mouseDragToItem: 0
@@ -11564,7 +11564,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a6e4c8e0e426fd84092288ac4610ed0f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a637c1091b555ac4483556b816f2287f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
