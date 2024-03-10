@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [Header("UICanvase")]
     // 이거 clayAction 에서 쓸 것.. 점토 들어올리면 UI 캔버스 꺼버리도록..
     public GameObject UICanvas;
+    public GameObject exitButton; // 얘는 구매, 업그레이드, 설정 등 UI 켜지면 활성화 될 것..
 
     [Header("2D Light & SellButtonUIAnim")]
     // 점토를 잡아들었을 때 그림자랑 빛 효과가 켜지도록..
@@ -66,7 +67,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject unlockPanel; // 해금 안 됐을 땐 얘가 활성화 되어있기..
     public GameObject lockPanel; // 해금 되면 얘가..(해금하기 버튼 누르면 활성화 on, 해금하기 버튼은 unlock에 있음.)
-    public GameObject buyClayPanel; // 일단 스페이스바 누르면 뜨도록 해놨습니다..
+    public GameObject buyClayPanel;
 
     public int finalPageIndex; // 버튼 눌렀을 때 이 인덱스 벗어나면 안 넘어가도록..(일단 기본 점토만 쓸거라 4로 해놓았습니다..)
     public int currentPageIndex;
@@ -507,5 +508,10 @@ public class GameManager : MonoBehaviour
         // 용품 업그레이드 관련
 
         // 여행 관련
+    }
+
+    public void ExiteButtonToFalse()
+    {
+        exitButton.SetActive(false);
     }
 }

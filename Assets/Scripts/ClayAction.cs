@@ -190,7 +190,7 @@ public class ClayAction : MonoBehaviour
         GameManager.instance.clay = this.GetComponent<Clay>();
 
         // 마우스 커서가 젤리 판매 버튼이랑 닿으면 mouseDragToSellBtn 이 true 가 됨..
-        if ((mouseDragToSellBtn || isActioned) && GameManager.instance.clay == null) return; // 게임매니저가 점토를 한 번도 안 누른 상태면 그냥 빠져나오도록..
+        if ((mouseDragToSellBtn/* && isActioned*/) && GameManager.instance.clay == null) return; // 게임매니저가 점토를 한 번도 안 누른 상태면 그냥 빠져나오도록..
 
         if (mouseDragToSellBtn && GameManager.instance.clay.level == maxLevel)
         {
