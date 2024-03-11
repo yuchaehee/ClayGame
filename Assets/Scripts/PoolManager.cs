@@ -7,7 +7,7 @@ public class PoolManager : MonoBehaviour
     // [0] : 레벨업, [1] : 판매, ...
     public ParticleSystem[] effects;
 
-    // 일단 index 5 부터 이펙트 프리팹 넣어놨습니다..
+    // 이펙트 프리팹은 여기 배열에 넣는 게 아니라 게임 매니저에 직접 넣어놨습니다.. 이 배열은 점토 프리팹 저장 용으로 쓸 것입니다..
     public GameObject[] prefabs;
     public List<GameObject>[] pools;
 

@@ -13,7 +13,9 @@ public abstract class Clay : MonoBehaviour
 
     public int touchCount;
     protected float buyPrice;
-    protected float sellPrice;
+
+    public float sellPrice;
+
     protected float levelUpPlusLove; // 레벨에 곱해서 love 값에 더해줄 것입니다.. (희귀도에 따라 다를예정..)
     public float love; // 얘는 터치하면 반환하는 애정..
     public string clayName;

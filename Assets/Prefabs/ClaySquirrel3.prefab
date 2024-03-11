@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 2558420218463960010}
   - component: {fileID: 2617171439248680581}
   m_Layer: 6
-  m_Name: ClaySquirrel1
+  m_Name: ClaySquirrel3
   m_TagString: squirrel1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -164,7 +164,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -4
-  m_Sprite: {fileID: 21300000, guid: 4e9c94dbab133b9469efe0518de0aaea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7c72fcb09d8edf541b60cfdd56bf510b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -277,8 +277,8 @@ MonoBehaviour:
   - {fileID: 9100000, guid: 86ac176976b83164395db564595b9064, type: 2}
   - {fileID: 9100000, guid: c56981a1a85218a448ce76e9ad5d3913, type: 2}
   curAnim: {fileID: 0}
-  firstSprite: {fileID: 21300000, guid: 4e9c94dbab133b9469efe0518de0aaea, type: 3}
-  lastSprite: {fileID: 21300000, guid: 0cf50933562f08b42af87b4bb3ca79bc, type: 3}
+  firstSprite: {fileID: 21300000, guid: 7c72fcb09d8edf541b60cfdd56bf510b, type: 3}
+  lastSprite: {fileID: 21300000, guid: 995f9ac5c47aec74f95c8fc276fb7763, type: 3}
   maxLevel: 4
   x: 0
   y: 0
@@ -302,11 +302,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e3366236a4cdd44cb61e8c5afa030ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rarity: 0
+  rarity: 2
   level: 0
   exps: 0a000000140000001e00000028000000ffffffff
   touchCount: 0
-  sellPrice: 2000
+  sellPrice: 15000
   love: 0
   clayName: 
   clayInformation: 

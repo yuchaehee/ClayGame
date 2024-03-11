@@ -12,6 +12,7 @@ public class ClayBook : MonoBehaviour
     public GameObject unlockClayBookPage;
     public Image unlockClayImage;
     public Text unlockClayName;
+    public Text UnlockClaySubText;
 
     // 사전에 등록 된 상태
     public GameObject lockClayBookPage;
@@ -41,7 +42,23 @@ public class ClayBook : MonoBehaviour
         minPageIndex = 0;
         curPageIndex = 0;
 
-        clayInformationList = new string[] { "저는 고양이임요.", "저는 병아리임요.", "저는 강아지임요.", "저는 토끼임요.", "저는 다람쥐임요." };
+        clayInformationList = new string[] { 
+            "저는 고양이임요.", 
+            "저는 병아리임요.", 
+            "저는 강아지임요.", 
+            "저는 토끼임요.", 
+            "저는 다람쥐임요.",
+            "저는 짱고양이임요.",
+            "저는 짱병아리임요.",
+            "저는 짱강아지임요.",
+            "저는 짱토끼임요.",
+            "저는 짱다람쥐임요.",
+            "저는 짱짱고양이임요.",
+            "저는 짱짱병아리임요.",
+            "저는 짱짱강아지임요.",
+            "저는 짱짱토끼임요.",
+            "저는 짱짱다람쥐임요.",
+        };
     }
 
     private void Update()
@@ -96,6 +113,7 @@ public class ClayBook : MonoBehaviour
         lockClayImage.sprite = GameManager.instance.claySpriteList[curPageIndex];
 
         ClaySubText.text = "희귀도 " + (GameManager.instance.pool.prefabs[curPageIndex].GetComponent<Clay>().rarity + 1);
+        UnlockClaySubText.text = ClaySubText.text;
         ClayInformation.text = clayInformationList[curPageIndex];
     }
 

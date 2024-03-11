@@ -2334,7 +2334,16 @@ MonoBehaviour:
   - {fileID: 3304036434146338928, guid: 1ffdd46aa137ea646a50dc83c8ba080b, type: 3}
   - {fileID: 3074064985678447643, guid: 30064e58944afff469914471c0797765, type: 3}
   - {fileID: 7332489779977808343, guid: 5e0f411277df7d744a5faa1c62e1b4a4, type: 3}
-  - {fileID: 4938095755617958529, guid: 2e79f16be10fbd14f8d5ef191f8db4aa, type: 3}
+  - {fileID: 347995745371087907, guid: 0a75725eaa17dc74a8f61fb734690aa8, type: 3}
+  - {fileID: 4893908579485856365, guid: 7c751ff27d90ab749bd2c81e770f421f, type: 3}
+  - {fileID: 3304036434146338928, guid: 95ec64c4bd0849e4790bd3cf838839da, type: 3}
+  - {fileID: 3074064985678447643, guid: dfaba19ed5982e640bed15ce7004d8d9, type: 3}
+  - {fileID: 7332489779977808343, guid: 8345be00a2b6f2d4dac8e77034aad7c9, type: 3}
+  - {fileID: 347995745371087907, guid: 47ec0ab25e3722b4394bf02f685d6762, type: 3}
+  - {fileID: 4893908579485856365, guid: 4158424e0b0a23946bb6fc6e94acc556, type: 3}
+  - {fileID: 3304036434146338928, guid: bb097c84463701044871f4445c9df09d, type: 3}
+  - {fileID: 3074064985678447643, guid: 8b75103311a78db4abdfc32c93afb4f5, type: 3}
+  - {fileID: 7332489779977808343, guid: 3f89e3a0c043de348a8c2d40cb86e2e2, type: 3}
 --- !u!4 &271821939
 Transform:
   m_ObjectHideFlags: 0
@@ -4315,6 +4324,7 @@ MonoBehaviour:
   unlockClayBookPage: {fileID: 975393189}
   unlockClayImage: {fileID: 2131612926}
   unlockClayName: {fileID: 22103519}
+  UnlockClaySubText: {fileID: 378619616}
   lockClayBookPage: {fileID: 1218313512}
   lockClayImage: {fileID: 1147820767}
   ClayInformation: {fileID: 685841964}
@@ -4324,7 +4334,7 @@ MonoBehaviour:
   curPageIndex: 0
   clayInformationList: []
   bookPageControl: {fileID: 322015155}
-  isRegistered: 0100000000
+  isRegistered: 010000000000000000000000000000
 --- !u!4 &554781212
 Transform:
   m_ObjectHideFlags: 0
@@ -4926,15 +4936,35 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 30ede929e34814241af060121b8c476a, type: 3}
   - {fileID: 21300000, guid: c51fbb56ad19f9b4da91031a6b109970, type: 3}
   - {fileID: 21300000, guid: 4e9c94dbab133b9469efe0518de0aaea, type: 3}
+  - {fileID: 21300000, guid: f9f7057ac47ebc74da8994c12fcfed27, type: 3}
+  - {fileID: 21300000, guid: 2e786904fdb90714d8e644d298001b28, type: 3}
+  - {fileID: 21300000, guid: 439e7518c7c2e9e40900fff881ce3dd6, type: 3}
+  - {fileID: 21300000, guid: 8c9b8ecc6a30abb44904ad9bab9ce28d, type: 3}
+  - {fileID: 21300000, guid: ee3eaa5e4ca613d4cb64828ee9f7b9ca, type: 3}
+  - {fileID: 21300000, guid: 08629463e7a5999468835abf3c541fec, type: 3}
+  - {fileID: 21300000, guid: 89ec600db9a61a743b3a05eefee170eb, type: 3}
+  - {fileID: 21300000, guid: 63599a2b93ae5784aac70b53c903b070, type: 3}
+  - {fileID: 21300000, guid: eb5115dd8d6f51944b517ab4b752f31a, type: 3}
+  - {fileID: 21300000, guid: 7c72fcb09d8edf541b60cfdd56bf510b, type: 3}
   clayNameList:
   - "\uACE0\uC591\uC774"
   - "\uBCD1\uC544\uB9AC"
   - "\uAC15\uC544\uC9C0"
   - "\uD1A0\uB07C"
   - "\uB2E4\uB78C\uC950"
-  clayGoldList: f4010000f4010000f4010000f4010000f4010000
-  isUnlocked: 0100000000
-  isLocked: 0001010101
+  - "\uC9F1\uACE0\uC591\uC774"
+  - "\uC9F1\uBCD1\uC544\uB9AC"
+  - "\uC9F1\uAC15\uC544\uC9C0"
+  - "\uC9F1\uD1A0\uB07C"
+  - "\uC9F1\uB2E4\uB78C\uC950"
+  - "\uC9F1\uC9F1\uACE0\uC591\uC774"
+  - "\uC9F1\uC9F1\uBCD1\uC544\uB9AC"
+  - "\uC9F1\uC9F1\uAC15\uC544\uC9C0"
+  - "\uC9F1\uC9F1\uD1A0\uB07C"
+  - "\uC9F1\uC9F1\uB2E4\uB78C\uC950"
+  clayGoldList: f4010000f4010000f4010000f4010000f4010000dc050000dc050000dc050000dc050000dc050000b80b0000b80b0000b80b0000b80b0000b80b0000
+  isUnlocked: 010000000000000000000000000000
+  isLocked: 000101010101010101010101010101
   clayHouseUpgradePrice: 0000000088130000204e0000a086010020a10700
   clayToyUpgradePrice: 0000000088130000204e0000a086010020a10700
   normalLevelAc:
@@ -9098,7 +9128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1218313513
 RectTransform:
   m_ObjectHideFlags: 0

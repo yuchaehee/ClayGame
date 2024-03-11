@@ -390,6 +390,7 @@ MonoBehaviour:
   level: 0
   exps: 0a000000140000001e00000028000000ffffffff
   touchCount: 0
+  sellPrice: 2000
   love: 0
   clayName: 
   clayInformation: 
